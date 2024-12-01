@@ -70,9 +70,13 @@ function onHover(hover)
 			return true;
 		end
 
-		winTooltip = Interface.openWindow("card_tooltip", getDatabaseNode())
+		winTooltip = Interface.openWindow("card_tooltip", getDatabaseNode());
 		winTooltip.setSize(2*h, 2*w); -- Set the size before the position, since position relies on size
-
+		-- local wA, hA = winTooltip.getSize();
+		-- local nPropor = hA/wA;
+		-- hA = nPropor * w;
+		-- winTooltip.setSize(w, hA); -- Set the size before the position, since position relies on size
+		-- Debug.console(winTooltip);
 		local x, y = self.getPositionOfTooltip();
 		winTooltip.setPosition(x, y);
 	elseif not hover and winTooltip then
